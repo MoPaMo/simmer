@@ -20,13 +20,13 @@ const RecipeList = () => {
     <div>
       <h2>My Recipes</h2>
       {recipes.length === 0 ? (
-        <p>No recipes added yet.</p>
+        <p>No recipes added yet. Start by adding a new recipe!</p>
       ) : (
         <ul>
           {recipes.map((recipe) => (
             <li key={recipe.id}>
               <h3>{recipe.title}</h3>
-              <button onClick={() => deleteRecipe(recipe.id)}>Delete</button>
+              <button onClick={() => deleteRecipe(recipe.id)}>🗑️</button>
             </li>
           ))}
         </ul>
