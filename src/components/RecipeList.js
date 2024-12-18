@@ -1,5 +1,6 @@
 // src/components/RecipeList.js
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -26,7 +27,12 @@ const RecipeList = () => {
           {recipes.map((recipe) => (
             <li key={recipe.id}>
               <h3>{recipe.title}</h3>
-              <button onClick={() => deleteRecipe(recipe.id)}>🗑️</button>
+              <div>
+                <Link to={`/recipe/${recipe.id}`}>
+                  <button>View Recipe</button>
+                </Link>
+                <button onClick={() => deleteRecipe(recipe.id)}>🗑️</button>
+              </div>
             </li>
           ))}
         </ul>
