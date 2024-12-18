@@ -1,0 +1,78 @@
+/* src/components/RecipeList.css */
+
+.recipe-list-container {
+  padding: 20px;
+}
+
+.recipe-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-item {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 20px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.recipe-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-link {
+  text-decoration: none;
+  color: #333;
+  flex-grow: 1;
+}
+
+.recipe-link h3 {
+  margin: 0;
+  font-size: 1.2em;
+  transition: color 0.2s;
+}
+
+.recipe-link:hover h3 {
+  color: #ff6f61;
+}
+
+.delete-button {
+  background-color: #e53935;
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: 15px;
+}
+
+.delete-button:hover {
+  background-color: #c62828;
+  transform: scale(1.1);
+}
+
+.delete-button:active {
+  transform: scale(1);
+}
+
+@media (max-width: 600px) {
+  .recipe-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
