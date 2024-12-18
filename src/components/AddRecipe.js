@@ -21,6 +21,7 @@ const AddRecipe = () => {
     setTitle("");
     setIngredients("");
     setInstructions("");
+    alert("Recipe added successfully!");
   };
 
   return (
@@ -28,27 +29,33 @@ const AddRecipe = () => {
       <h2>Add New Recipe</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Recipe Title:</label>
+          <label htmlFor="title">Recipe Title:</label>
           <input
+            id="title"
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            placeholder="e.g., Spaghetti Bolognese"
             required
           />
         </div>
         <div>
-          <label>Ingredients:</label>
+          <label htmlFor="ingredients">Ingredients:</label>
           <textarea
+            id="ingredients"
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
+            placeholder="List your ingredients separated by commas."
             required
           />
         </div>
         <div>
-          <label>Instructions:</label>
+          <label htmlFor="instructions">Instructions:</label>
           <textarea
+            id="instructions"
             value={instructions}
             onChange={(e) => setInstructions(e.target.value)}
+            placeholder="Step-by-step cooking instructions."
             required
           />
         </div>
