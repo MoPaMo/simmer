@@ -29,6 +29,8 @@ nav ul {
   padding: 0;
   display: flex;
   gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 nav a {
@@ -36,6 +38,9 @@ nav a {
   color: #fff;
   font-weight: 500;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 nav a:hover {
@@ -65,7 +70,7 @@ button:active {
 input,
 textarea {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   padding: 10px;
   margin: 5px 0 15px 0;
   border: 2px solid #ff6f61;
@@ -93,6 +98,12 @@ li {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 li h3 {
@@ -108,6 +119,12 @@ li button {
   border-radius: 50%;
   padding: 5px 10px;
   font-size: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+li button:hover {
+  background-color: #e53935;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -122,5 +139,28 @@ li button {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  form input,
+  form textarea {
+    max-width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
   }
 }
